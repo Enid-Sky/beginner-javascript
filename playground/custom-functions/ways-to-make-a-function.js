@@ -138,6 +138,52 @@
 /* METHODS */
 
 // a function that lives inside of an object
-// console is the object, and log is the function
+// example: console is the object, and log is the function
 
-const wes = {};
+// const person = {
+//   name: 'Amy Anderson',
+//   // method
+//   sayHi() {
+//     console.log(this);
+//     console.log(`Hey ${this.name}`);
+//     console.log('Hey Amy!');
+//     return 'Hey Amy';
+//   },
+
+//   // short hand method
+//   yellHi() {
+//     console.log(`Hey ${this.name}`);
+//     console.log('Hey Wesssss');
+//     return 'Hey Amy';
+//   },
+
+//   /*eslint-disable */
+//   //arrow functions take the parent scope, which in this case is the window. Like saying window.name, instead of person.name.
+
+//   whisperHi: () => {
+//     console.log(this);
+//     console.log("hiii wess i'm a mouse");
+
+//   },
+// };
+
+// //another example of this not working with arrow functiosn
+// //adds one to the score, everytime we call the function teamA.score()
+
+// const teamA = {
+//   points: 23,
+//   score: function() {
+//     this.points++;
+//   }
+// }
+
+// //however this arrow function will not work. score will remain at 23 because "this" is the window.
+// const teamB = {
+//   points:23,
+//   score: () => {
+//     console.log(this);
+//     this.points++;
+//   }
+// }
+
+/* CALL BACK FUNCTIONS */
