@@ -187,3 +187,34 @@
 // }
 
 /* CALL BACK FUNCTIONS */
+
+// click callback function when clicking a button
+
+// const button = document.querySelector('.clickMe');
+
+// function handleClick() {
+//   console.log('clicked');
+// }
+// button.addEventListener('click', handleClick);
+
+// submit button example
+const mybutton = document.querySelector('.submit');
+
+function handleSubmit() {
+  console.log('submitted');
+}
+mybutton.addEventListener('click', handleSubmit);
+
+// Timer callback
+
+// set timeout takes 2 params, function and duration in milliseconds
+
+// annonymous way
+setTimeout(function() {
+  console.log(`done, time to eat`);
+}, 2000);
+
+// arrow way
+setTimeout(() => {
+  console.log(`done for realz`);
+}, 3000);
