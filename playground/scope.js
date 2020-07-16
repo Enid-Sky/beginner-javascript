@@ -1,5 +1,8 @@
 /*eslint-disable */
 /*Let and Const Variables are Block Scoped and Var variables are function scoped, and that answers where they are available to you.*/
+//Keep in mind the global scope is called the window. It's where global variables live and can be accessed from pretty much anywhere. 
+//open console and go to location or window.location. all info about the browser is in the window object. 
+//type innerWidth, and it will tell you the width of the window. 
 
 /*SCOPE ISSUES */
 // function isCool(name) {
