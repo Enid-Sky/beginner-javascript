@@ -9,6 +9,90 @@
 </head>
 
 <body>
+  <p class='para'>'Hello'</p>
+
+  <script>/* ++++++ WHAT IS A CLOSURE? ++++++*/
+    // A closure is the ability to access a parent level scope frome a child scope even after the parent scope has been terminated.
+
+    //
+
+    // A function inside of a function. A closure creating a function.
+
+    // function outer() {
+    //   const outerVar = "Hey I am the outer var!"
+    //   function inner() {
+    //     const innerVar = "I am the inner var!"
+    //     console.log(innerVar);//will log because within same scope.
+    //     console.log(outerVar);//will go up one level and log it.
+    //   }
+    // }
+
+    // //But we may want to call the function at a later date, do lets add a return
+
+    // function outer() {
+    //   const outerVar = 'Hey I am the outer var!';
+    //   function inner() {
+    //     const innerVar = 'I am the inner var!';
+    //     console.log(innerVar); // will log because within same scope.
+    //     console.log(outerVar); // will go up one level and log it.
+    //   }
+    //   return inner;
+    // }
+
+    // const innerFn = outer(); // stick the function in a variable. This will return inner for us.
+    // innerFn(); // will this return inner too?  Yes!
+
+    // reach outside to the parent scope and eventhough it is done running, it will maintain that variable in memory so we can run it at a different time.
+
+    /* ANOTHER EXAMPLE OF A FUNCTION INSIDE ANOTHER FUNCTION */
+
+    // function createGreeting(greeting = '') {
+    //   const myGreet = greeting.toUpperCase();
+    //   return function (name) {
+    //     return `${myGreet} ${name}`;
+    //   };
+    // }
+
+    // const sayHello = createGreeting('Hello');
+    // const sayHey = createGreeting('Hey');
+
+    // console.log(sayHello('Enid'));
+    // console.log(sayHello('Mike'));
+    // console.log(sayHey('Snickers'));
+
+    /* Private Variable Example */
+
+    // closures are great for keeping track of multiple scores. We can incremenet and decrement
+
+    function createGame(gameName) {
+      let score = 0;
+      return function win() {
+        // returns function from outer function
+        score++;
+        return `Your name ${gameName} score is ${score}`;
+      };
+    }
+
+    const hockeyGame = createGame('Hockey');
+    const soccerGame = createGame('Soccer');
+
+    // restaurant wants to keep track of how many types of sandwiches have been sold.
+    function createSandwich(sandwichName) {
+      let sold = 0;
+      return function created() {
+        sold++;
+        if (sold === 1) {
+          return `only one ${sandwichName} has been sold`;
+        }
+        return `${sold} ${sandwichName}s have been sold`;
+      };
+    }
+
+    // these are two separate created() functions and they each have their own private variable score. We can't currently access score on it's own.
+    const submarine = createSandwich('submarine');
+    const peanutButter = createSandwich('peanut butter');
+    // const peanutButter = createSandwich('peanut butter');
+  </script>
 
 </body>
 
